@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { HeaderComponent } from './common/layout/header/header.component';
 import { LayoutComponent } from './common/layout/layout.component';
+import { NotFoundPageComponent } from './common/not-found-page/not-found-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LayoutComponent],
+  declarations: [AppComponent, HeaderComponent, LayoutComponent, NotFoundPageComponent],
   imports: [BrowserModule, AppRoutingModule, StoreModule.forRoot({}, {})],
   providers: [],
   bootstrap: [AppComponent],
