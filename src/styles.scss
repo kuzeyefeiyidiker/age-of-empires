@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap');
 
-$body-background-color: #181a21;
-$logo-color: #efc657;
-$navbar-link-color: #e87e1c;
+@import 'variables.scss';
+
 
 body,
 html {
@@ -26,7 +25,7 @@ html {
     font-family: 'Cinzel Decorative', cursive;
     font-weight: bold;
     &:hover {
-        color: white;
         background: inherit;
+        color: white;
     }
 }

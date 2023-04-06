@@ -12,8 +12,8 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-end">
-      <a routerLink="/" class="navbar-link is-arrowless"> Home </a>
-      <a routerLink="/units" class="navbar-link is-arrowless"> Units </a>
+      <a routerLink="/" routerLinkActive="is-active" class="navbar-link is-arrowless" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
+      <a routerLink="/units" routerLinkActive="is-active" class="navbar-link is-arrowless"> Units </a>
     </div>
   </div>
 </nav>
