@@ -1,0 +1,27 @@
+@import 'variables';
+
+.table {
+  border-radius: 4px;
+  td {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  td:first-child,
+  th:first-child {
+    width: 50px;
+  }
+}
+
+.units-loader {
+  height: 460px;
+  background: $body-background-color;
+  opacity: 0.8;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

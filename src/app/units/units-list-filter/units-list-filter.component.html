@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+  <div class="field">
+    <label class="label is-size-5 has-text-white">Ages</label>
+    <div class="field has-addons">
+      <p class="control">
+        <button class="button" [class.is-primary]="!!!form.value.age" (click)="changeAge()">All</button>
+      </p>
+      <p class="control" *ngFor="let age of ageTypes">
+        <button class="button" [class.is-primary]="form.value.age === age" (click)="changeAge(age)">{{ age }}</button>
+      </p>
+    </div>
+  </div>
+
+  <div class="cost-filters" formGroupName="cost">
+    <label class="label is-size-5 has-text-white">Costs</label>
+    <div class="field is-grouped is-align-items-center" [formGroupName]="type" *ngFor="let type of costTypes; let itemIndex = index">
+      <div class="control">
+        <label class="checkbox has-text-white">
+          <input type="checkbox" formControlName="enabled" />
+          {{ type }}
+        </label>
+      </div>
+      <div class="control custom-slider">
+        <ngx-slider [options]="sliderOptions[itemIndex]" formControlName="rangeValue"></ngx-slider>
+      </div>
+    </div>
+  </div>
+</form>

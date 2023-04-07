@@ -9,11 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'units',
-    loadChildren: () => import('./units-list-page/units-list-page.module').then(m => m.UnitsListPageModule),
-  },
-  {
-    path: 'units/:unitId',
-    loadChildren: () => import('./unit-detail-page/unit-detail-page.module').then(m => m.UnitDetailPageModule),
+    loadChildren: () => import('./units/units.module').then(m => m.UnitsModule),
   },
   {
     path: '**',

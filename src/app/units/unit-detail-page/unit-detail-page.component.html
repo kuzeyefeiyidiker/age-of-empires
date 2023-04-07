@@ -1,0 +1,76 @@
+<div class="has-text-centered">
+  <h1 class="title is-1">Unit Info</h1>
+</div>
+
+<div class="columns mt-3 is-justify-content-center">
+  <div class="column is-4">
+    <a routerLink="/units" class="has-text-weight-bold is-size-8">Click to go back</a>
+    <div class="card">
+      <div class="card-content is-justify-content-center">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{ unit.name }}</p>
+            <p class="subtitle is-6">{{ unit.description }}</p>
+          </div>
+        </div>
+        <table class="table is-fullwidth">
+          <tbody>
+            <tr>
+              <td class="column-header">ID</td>
+              <td>{{ unit.id }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Name</td>
+              <td>{{ unit.name }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Description</td>
+              <td>{{ unit.description }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Min Required Age</td>
+              <td>{{ unit.age }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Wood Cost</td>
+              <td>{{ unit.cost ? unit.cost['Wood'] : '' }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Food Cost</td>
+              <td>{{ unit.cost ? unit.cost['Food'] : '' }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Gold Cost</td>
+              <td>{{ unit.cost ? unit.cost['Gold'] : '' }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Build Time</td>
+              <td>{{ unit.build_time }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Reload Time</td>
+              <td>{{ unit.reload_time }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Hit Points</td>
+              <td>{{ unit.hit_points }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Attack</td>
+              <td>{{ unit.attack }}</td>
+            </tr>
+            <tr>
+              <td class="column-header">Accuracy</td>
+              <td>{{ unit.accuracy }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
