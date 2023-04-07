@@ -1,13 +1,22 @@
 @import 'variables.scss';
 
 .navbar {
+    background: $body-background-color;
     border: 15px solid transparent;
     border-image-source: url('/assets/images/border-texture.png');
     border-image-repeat: repeat;
     border-image-slice: 15;
+    height: 85px;
 }
 
 .navbar-link {
+    color: $navbar-link-color;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: bold;
+    &:hover {
+        background: inherit;
+        color: white;
+    }
     &:visited, &:active, &:focus     {
         background: initial;
     }
