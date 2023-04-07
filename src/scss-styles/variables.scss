@@ -1,4 +1,30 @@
 // COLORS
+$radius: 4px;
+$radius-small: 2px;
+
+// Override Bulma Variables
+$yellow: #efc657;
+$yellow-secondary: #af8f37;
+$black-bis: #323232;
+$orange: rgb(195, 127, 39);
+
+$primary: $yellow;
+$warning: $orange;
+
+$navbar-link-color: $yellow;
+
 $body-background-color: #181a21;
-$logo-color: #efc657;
-$navbar-link-color: #e87e1c;
+
+$button-color: white;
+$button-hover-color: white;
+$button-background-color: $black-bis;
+
+$pagination-color: white;
+$pagination-hover-color: white;
+
+$card-background-color: #202020;
+
+$table-background-color: $black-bis;
+$table-color: #e5e5e5;
+$table-row-hover-background-color: $yellow-secondary;
+$table-head-cell-color: #e5e5e5;

@@ -1,31 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap');
-
 @import 'variables.scss';
-
+@import "bulma/bulma";
+@import 'bulma-slider';
 
 body,
 html {
   height: 100%;
   min-height: 100%;
-  background: $body-background-color;
-}
-
-
-.navbar {
-    background: $body-background-color;
 }
 
 .title {
-    color: $logo-color;
+    color: $yellow;
     font-family: 'Lobster Two', cursive;
 }
 
-.navbar-link {
-    color: $navbar-link-color;
-    font-family: 'Cinzel Decorative', cursive;
-    font-weight: bold;
-    &:hover {
-        background: inherit;
-        color: white;
-    }
+.subtitle {
+  color: #e5e5e5;
 }
