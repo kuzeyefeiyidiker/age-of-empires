@@ -1,0 +1,9 @@
+@import 'variables.scss';
+
+.pagination-link, .pagination-next, .pagination-previous {
+    background: $black-bis;
+}
+
+.is-active {
+    background: $primary;
+}

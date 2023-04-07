@@ -1,0 +1,15 @@
+<nav *ngIf="page" class="pagination is-centered" role="navigation" aria-label="pagination">
+  <button class="pagination-previous" (click)="prevPage()" [disabled]="!page.prevPage">Previous</button>
+  <button class="pagination-next" (click)="nextPage()" [disabled]="!page.nextPage">Next page</button>
+  <ul class="pagination-list">
+    <li>
+      <a
+        class="pagination-link"
+        *ngFor="let item of pages; let pageIndex = index"
+        (click)="changePage(pageIndex + 1)"
+        [class.is-active]="pageIndex + 1 === page.currentPage">
+        {{ pageIndex + 1 }}
+      </a>
+    </li>
+  </ul>
+</nav>
