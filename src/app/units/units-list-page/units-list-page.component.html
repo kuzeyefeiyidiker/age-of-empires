@@ -13,8 +13,8 @@
     <app-units-list-filter (filterChanged)="onFilterChange($event)"></app-units-list-filter>
   </div>
   <div class="column is-8 pt-5 is-relative">
-    <ng-container *ngIf="!initialized" [ngTemplateOutlet]="loaderTemplate"></ng-container>
-    <table class="table is-fullwidth is-hoverable">
+    <ng-container *ngIf="isLoading" [ngTemplateOutlet]="loaderTemplate"></ng-container>
+    <table *ngIf="units" class="table is-fullwidth is-hoverable">
       <thead>
         <tr>
           <th>Id</th>
@@ -32,6 +32,6 @@
         </tr>
       </tbody>
     </table>
-    <app-paginator *ngIf="initialized" [page]="units" (pageChange)="changePage($event)"></app-paginator>
+    <app-paginator *ngIf="units" [page]="units" (pageChange)="changePage($event)"></app-paginator>
   </div>
 </div>

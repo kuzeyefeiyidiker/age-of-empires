@@ -32,7 +32,7 @@ export class LayoutComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (!this.subscription) {
+    if (this.subscription) {
       this.subscription.unsubscribe();
     }
   }

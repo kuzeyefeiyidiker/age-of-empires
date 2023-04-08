@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomRouteReuseStrategy } from './common/custom-route-reuse-strategy';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent, HeaderComponent, NotFoundPageComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {})],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {}), EffectsModule.forRoot()],
   providers: [[{ provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy }]],
   bootstrap: [AppComponent],
 })

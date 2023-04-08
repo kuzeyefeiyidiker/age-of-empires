@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { UnitAgesFilter } from 'src/app/utils/units';
 import { UnitAges, UnitCostTypes, UnitFilter } from 'src/app/common/types';
 import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { Options } from '@angular-slider/ngx-slider';
 
 @Component({
@@ -10,7 +10,7 @@ import { Options } from '@angular-slider/ngx-slider';
   templateUrl: './units-list-filter.component.html',
   styleUrls: ['./units-list-filter.component.scss'],
 })
-export class UnitsListFilterComponent implements OnInit {
+export class UnitsListFilterComponent implements OnInit, OnDestroy {
   @Output() filterChanged: EventEmitter<UnitFilter> = new EventEmitter();
 
   ageTypes = Object.keys(UnitAgesFilter) as UnitAges[];
@@ -21,6 +21,7 @@ export class UnitsListFilterComponent implements OnInit {
   });
 
   sliderOptions: Options[] = [];
+  private readonly destroy$ = new Subject();
 
   get costFilterForm(): FormGroup {
     return this.form.get('cost') as FormGroup;
@@ -28,9 +29,14 @@ export class UnitsListFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCostFilters();
-    this.form.valueChanges.pipe(debounceTime(300)).subscribe(() => {
+    this.form.valueChanges.pipe(takeUntil(this.destroy$), debounceTime(300)).subscribe(() => {
       this.filterChanged.emit(this.getFilters());
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(false);
+    this.destroy$.complete();
   }
 
   changeAge(selection?: UnitAges): void {
