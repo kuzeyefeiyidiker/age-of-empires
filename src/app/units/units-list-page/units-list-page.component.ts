@@ -27,8 +27,10 @@ export class UnitsListPageComponent implements OnInit, OnDestroy {
       .select(GetUnits)
       .pipe(takeUntil(this.destroy$))
       .subscribe(state => {
-        this.isLoading = state.loading;
-        this.units = { ...state.units };
+        if (state) {
+          this.isLoading = state.loading;
+          this.units = { ...state.units };
+        }
       });
     this.store.dispatch(LoadUnits({ filter: this.filter }));
   }
