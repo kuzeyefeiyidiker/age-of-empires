@@ -12,11 +12,9 @@ export class PaginatorComponent implements OnChanges {
 
   pages: (string | number)[] | undefined = [];
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['page']?.currentValue) {
-      if (this.page) {
-        this.pages = new Array(Math.ceil((this.page.totalCount || 0) / (this.page.limit || 10))).fill(0);
-      }
+  ngOnChanges(): void {
+    if (this.page) {
+      this.pages = new Array(Math.ceil((this.page.totalCount || 0) / (this.page.limit || 10))).fill(0);
     }
   }
 

@@ -93,6 +93,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss-styles"
+              ]
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets"

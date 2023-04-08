@@ -1,6 +1,6 @@
 <nav *ngIf="page" class="pagination is-centered" role="navigation" aria-label="pagination">
-  <button class="pagination-previous" (click)="prevPage()" [disabled]="!page.prevPage">Previous</button>
-  <button class="pagination-next" (click)="nextPage()" [disabled]="!page.nextPage">Next page</button>
+  <button class="pagination-previous" (click)="prevPage()" [attr.disabled]="!page.prevPage">Previous</button>
+  <button class="pagination-next" (click)="nextPage()" [attr.disabled]="!page.nextPage">Next page</button>
   <ul class="pagination-list">
     <li>
       <a
